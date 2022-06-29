@@ -1,0 +1,17 @@
+<div class = "main">
+  <form action = "/todos/create" method = "post">
+      <h1>TODO TASK</h1>
+   <div class = "container">
+      <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+
+      <input type = "text" id = "tasks" name = "todo[task]" placeholder = "Type Your Task">
+      <input type = "date" id = "date" name = "todo[date]" placeholder = "dd/mm/yyyy">
+      <button type = "Submit"> Submit </button>
+   </div>
+  </form>
+</div>
+
+
+
+<%# <h1>Todos#index</h1>
+<p>Find me in app/views/todos/index.html.erb</p> %>

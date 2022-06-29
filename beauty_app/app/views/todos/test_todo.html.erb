@@ -1,0 +1,24 @@
+<table>
+<tr>
+<th>Task</th>
+<th>Date</th>
+<th>Status</th>
+<th>Delete</th>
+</tr>
+
+<% Todo.all.each do |todo|%>
+
+<tr>
+<td><%=todo.task%></td>
+<td><%= todo.date%></td>
+
+<% if todo.status == false || todo.status == 'null' %>
+    <td><a href="/todos/update/ <%= todo.id%>"><button class="status_before_complete">Mark as Complete</button></a></td>
+<% else %>
+     <td><button class="status_after_complete" >Completed</button></td>
+<% end %>
+
+<td ><%= link_to "Delete", "/delete/#{todo.id}",data: { turbo_method: :delete, confirm: "Are you sure ?"} ,class: "delete_button" %></td>
+</tr>
+<%end%>
+</table>
