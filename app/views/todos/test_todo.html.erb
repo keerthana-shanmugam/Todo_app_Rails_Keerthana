@@ -1,29 +1,30 @@
-<table class = "border">
-`
-<tr class = "border_1">
-<th>Task</th>
-<th>Date</th>
-<th>Status</th>
-<th>Delete</th>
-</tr>
+<div class="main-container">
+  <table class="box">
+    <tr class="tb_heading">
+      <td>Task</td>
+      <td>Date</td>
+      <td>Status</td>
+      <td>Delete</td>
+    </tr>
 
-<% Todo.all.each do |todo|%>
+    <% Todo.all.each do |todo|%>
 
-<tr class = "border_2">
-<td><%=todo.task%></td>
-<td><%= todo.date%></td>
+    <tr class="tb_heading">
+      <td><%=todo.task%></td>
+      <td><%= todo.date%></td>
 
-<% if todo.status == false || todo.status == 'null' %>
-    <td><a href="/todos/update/ <%= todo.id%>"><button class="status_before_complete">Mark as Complete</button></a></td>
-<% else %>
-     <td><button class="status_after_complete" >Completed</button></td>
-<% end %>
+      <% if todo.status == false || todo.status == 'null' %>
+      <td>
+        <a href="/todos/update/ <%= todo.id%>"><button class = "before_status">Mark as Complete</button></a>
+      </td>
+      <% else %>
+      <td><button class = "after_status">Completed</button></td>
+      <% end %>
 
-<td >
-<%= form_with(url: "/delete/#{todo.id}", class: "TodoItem-delete", method: "delete") do %>
-<%= submit_tag "Delete", class: "TodoItem-trashIcon"%>
-<% end %>
-</td>
-</tr>
-<%end%>
-</table>
+      <td>
+        <%= form_with(url: "/delete/#{todo.id}", method: "delete") do %> <%=submit_tag "Delete", class: "delete_button"%> <% end %>
+      </td>
+    </tr>
+    <%end%>
+  </table>
+</div>

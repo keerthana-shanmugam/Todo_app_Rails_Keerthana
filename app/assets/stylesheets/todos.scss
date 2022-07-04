@@ -1,18 +1,20 @@
 // Place all the styles related to the todos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
- 
+
 // todo index css
-.main{
+.main {
    background-color: wheat;
    width: 100%;
    height: 705px;
    margin-top: -10px;
 }
-.main h1{
+
+.main h1 {
    text-align: center;
 }
-.container{
+
+.container {
    background-color: rgb(233, 220, 246);
    width: 450px;
    height: 320px;
@@ -21,7 +23,8 @@
    padding-top: 15px;
    border-radius: 10px;
 }
-.container input{
+
+.container input {
    background: transparent;
    border: none;
    outline: none;
@@ -30,26 +33,83 @@
    width: 400px;
    height: 70px;
 }
-.container button{
+
+.container button {
    border: 2px solid black;
    width: 150px;
    height: 50px;
    font-size: 20px;
    margin-top: 40px;
    border-radius: 7px;
-   margin-left: 130px; 
+   margin-left: 130px;
    background-color: rgb(186, 142, 228);
    color: white;
 }
-.border{
-   border: 5px solid black;
-   padding: 20px;
+
+// list page css part
+
+.main-container {
+   background-color: wheat;
+   height: 690px;
+   width: 100%;
+   position: fixed;
+
 }
-.border_1{
-   border: 5px solid black;
-   padding: 20px;
+
+.main_container::-webkit-scrollbar {
+   display: none;
 }
-.border_2{
-   border: 3px solid black;
-   padding: 5px;
+
+.box {
+   background-color: rgb(186, 142, 228);
+   border: 5px solid black;
+   overflow: scroll;
+   flex-wrap: wrap;
+   flex-direction: row;
+   margin-left: 390px;
+   margin-top: 150px;
+   width: 50%;
+   height: 350px;
+}
+
+.tb_heading td {
+   text-align: center;
+   font-weight: bold;
+   font-family: sans-serif;
+
+}
+
+.tb_body td {
+   text-align: center;
+}
+
+.before_status {
+   background-color: rgb(247, 136, 9);
+   font-size: 18px;
+   color: white;
+   font-weight: 600px;
+}
+.before_status:hover{
+   background-color: white;
+   color: black;
+}
+
+.after_status {
+   background-color: rgb(9, 247, 9);
+   font-size: 18px;
+   color: white;
+   font-weight: 600px;
+   cursor: not-allowed;
+}
+
+.delete_button {
+   background-color: red;
+   font-size: 18px;
+   color: white;
+   font-weight: 600px;
+}
+
+.delete_button:hover{
+   background-color: white;
+   color: black;
 }

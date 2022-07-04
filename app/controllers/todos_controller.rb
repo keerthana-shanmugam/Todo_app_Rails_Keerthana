@@ -13,13 +13,9 @@ class TodosController < ApplicationController
   
   def delete
     @cancel = Todo.find(params[:id])
-    if @cancel.destroy
-     @instant = Todo.all
-     redirect_to todos_list_path
-    else
-      render plain: "fail"
-    end
-    
+    @cancel.destroy
+    @instant = Todo.all
+    redirect_to todos_list_path
   end
 
   def update
@@ -28,7 +24,7 @@ class TodosController < ApplicationController
     todo.status = true
     if todo.save
     @todo_list = Todo.all
-    render "todos/test_todo"
+    redirect_to todos_list_path
     end
   end
 

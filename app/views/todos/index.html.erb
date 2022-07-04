@@ -4,8 +4,9 @@
    <div class = "container">
       <input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
 
-      <input type = "text" id = "tasks" name = "todo[task]" placeholder = "Type Your Task">
-      <input type = "date" id = "date" name = "todo[date]" placeholder = "dd/mm/yyyy">
+      <input type = "text" id = "tasks" name = "todo[task]" placeholder = "Type Your Task" required>
+      <input type = "date" id = "date" name = "todo[date]" placeholder = "dd/mm/yyyy" required
+      >
       <button type = "Submit"> Submit </button>
    </div>
   </form>
